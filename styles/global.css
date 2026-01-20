@@ -162,3 +162,23 @@ li{
 .finishItem{
     text-decoration: line-through;
 }
+
+@media (width <= 80em) {
+    body{
+        margin-inline: 32px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        & input{
+            width: 100%;
+        }
+        
+        & button{
+            width: 100%;
+        }
+    }
+}
