@@ -108,6 +108,7 @@ ul{
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-bottom: 36px;
 }
 
 li{
@@ -129,7 +130,7 @@ li{
     }
 }
 
-.checkbox{
+.checkboxDiv{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +162,28 @@ li{
 
 .finishItem{
     text-decoration: line-through;
+}
+
+.removeAlertHidden{
+    display: none;
+}
+
+.removeAlertVisible{
+    display: flex;
+    gap: 8px;
+
+    font: var(--label);
+    color: #FFFFFF;
+    background-color: var(--color-danger);
+    height: 44px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+
+    & h3 + img {
+        margin-left: auto;
+        cursor: pointer;
+    }
 }
 
 @media (width <= 80em) {

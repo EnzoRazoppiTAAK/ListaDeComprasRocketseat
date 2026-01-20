@@ -1,7 +1,8 @@
 const form = document.querySelector("form");
 const formInput = document.querySelector("form input");
 const list = document.querySelector("ul");
-const rollbackButton = document.querySelector(".rollback a")
+const rollbackButton = document.querySelector(".rollback a");
+const removeAlert = document.querySelector('.removeAlert');
 
 form.onsubmit = (event) => {
     event.preventDefault();
@@ -45,7 +46,7 @@ function createCheckboxPart(){
     checkboxInput.setAttribute('type', 'checkbox');
 
     const checkbox = document.createElement('div');
-    checkbox.classList.add('checkbox');
+    checkbox.classList.add('checkboxDiv');
     checkbox.append(checkboxImage, checkboxInput);
 
     return checkbox;
@@ -62,6 +63,8 @@ list.addEventListener('click', function (event){
     if (event.target.tagName === 'IMG'){
         const item = event.target.closest("li");
         item.remove();
+        removeAlert.classList.remove('removeAlertHidden');
+        removeAlert.classList.add('removeAlertVisible');
     }
 
     if(event.target.tagName === 'INPUT'){
@@ -90,4 +93,11 @@ function handleRollback(event){
         window.location.reload();
     }
 }
+
+removeAlert.addEventListener('click', function (event){
+    if(event.target.alt === 'X icon'){
+        removeAlert.classList.remove('removeAlertVisible');
+        removeAlert.classList.add('removeAlertHidden');
+    }
+})
 
