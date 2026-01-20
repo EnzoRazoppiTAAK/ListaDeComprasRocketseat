@@ -1,6 +1,7 @@
 const form = document.querySelector("form");
 const formInput = document.querySelector("form input");
 const list = document.querySelector("ul");
+const rollbackButton = document.querySelector(".rollback a")
 
 form.onsubmit = (event) => {
     event.preventDefault();
@@ -80,4 +81,13 @@ list.addEventListener('click', function (event){
         }
     }
 })
+
+function handleRollback(event){
+    event.preventDefault(); //impede que vá para o href = #
+    const reload = confirm('Deseja recarregar a página?');
+
+    if(reload){
+        window.location.reload();
+    }
+}
 
