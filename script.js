@@ -62,5 +62,22 @@ list.addEventListener('click', function (event){
         const item = event.target.closest("li");
         item.remove();
     }
+
+    if(event.target.tagName === 'INPUT'){
+
+        console.log(event.target.checked);
+        //event.target pega o elemento e seus atributos
+
+        if(event.target.checked){
+            const h3 = event.target.closest('li').querySelector('h3');
+            console.log(h3);
+            console.log('-------------------');
+            h3.classList.add('finishItem');
+        }else{
+            const h3 = event.target.closest('li').querySelector('h3');
+            h3.classList.remove('finishItem');
+            console.log(h3);
+        }
+    }
 })
 
