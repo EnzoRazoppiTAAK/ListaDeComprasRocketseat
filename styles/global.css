@@ -125,6 +125,7 @@ li{
 
     & img{
         margin-left: auto;
+        cursor: pointer;
     }
 }
 
@@ -156,4 +157,8 @@ li{
             inset: 0;
             opacity: 0;
         }
+}
+
+.finishItem{
+    text-decoration: line-through;
 }

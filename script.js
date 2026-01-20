@@ -2,7 +2,6 @@ const form = document.querySelector("form");
 const formInput = document.querySelector("form input");
 const list = document.querySelector("ul");
 
-
 form.onsubmit = (event) => {
     event.preventDefault();
 
@@ -55,4 +54,13 @@ function clearInput(){
     formInput.value = '';
     formInput.focus();
 }
+
+list.addEventListener('click', function (event){
+    console.log(event.target);
+    console.log(event.target.tagName);
+    if (event.target.tagName === 'IMG'){
+        const item = event.target.closest("li");
+        item.remove();
+    }
+})
 
